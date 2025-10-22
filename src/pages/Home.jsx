@@ -67,6 +67,20 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
+            {/* Image/Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
+                <span className="text-white text-lg font-semibold text-center px-4">
+                  Your Professional Photo
+                </span>
+              </div>
+            </motion.div>
+
 
           </div>
         </div>
