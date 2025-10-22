@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState('all');
 
 // Simulate API call to fetch projects
   useEffect(() => {
@@ -68,6 +69,13 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+
+  const categories = ['all', 'frontend', 'backend', 'fullstack'];
+  const filteredProjects = filter === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === filter);
+
+
   if (loading) {
     return (
       <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -90,7 +98,26 @@ const Projects = () => {
           a unique challenge and learning opportunity.
         </p>
       </div>
+
+        {/* Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+                <button
+                key={category}
+                onClick={() => setFilter(category)}
+                className={`px-6 py-2 rounded-full font-medium transition duration-300 ${
+                    filter === category
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+                >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+            ))}
+            </div>
+
     </div>
+    
   );
 };
 
