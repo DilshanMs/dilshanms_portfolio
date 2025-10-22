@@ -91,39 +91,58 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-          My Projects
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center">
-          Here are some of the projects I've worked on. Each one represents 
-          a unique challenge and learning opportunity.
-        </p>
-      </div>
+
+        {/* Header with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+            My Projects
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center">
+            Here are some of the projects I've worked on. Each one represents 
+            a unique challenge and learning opportunity.
+            </p>
+        </motion.div>
 
         {/* Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-                <button
-                key={category}
-                onClick={() => setFilter(category)}
-                className={`px-6 py-2 rounded-full font-medium transition duration-300 ${
-                    filter === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                }`}
-                >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-                </button>
-            ))}
-            </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setFilter(category)}
+              className={`px-6 py-2 rounded-full font-medium transition duration-300 ${
+                filter === category
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+              }`}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div
+        <motion.div
+          layout
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
               key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-200 dark:border-gray-700"
             >
+
               {/* Project Image */}
               <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -179,19 +198,24 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Empty State */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
             <p className="text-gray-500 dark:text-gray-400 text-lg">
               No projects found in this category. Check back soon!
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
+    </div>
   );
 };
 
