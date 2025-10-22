@@ -1,12 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <dev className="text-[40px]">Hello World</dev>
-} 
+  return (
+    <Router>
+      <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
 
 export default App
