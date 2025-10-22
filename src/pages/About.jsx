@@ -115,6 +115,66 @@ const About = () => {
             </motion.section>
           </div>
 
+          {/* Right Column - Skills */}
+          <div className="space-y-12">
+
+            {/* Technical Skills */}
+            <motion.section
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Technical Skills
+              </h2>
+              <div className="space-y-4">
+                {technicalSkills.map((skill, index) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
+                        className="bg-blue-600 h-3 rounded-full"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+
+            {/* Soft Skills */}
+            <motion.section
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Soft Skills
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {softSkills.map((skill, index) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 + 0.7, duration: 0.5 }}
+                    className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.section>
+          </div>
         </div>
       </div>
     </div>
