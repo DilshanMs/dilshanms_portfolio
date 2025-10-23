@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -65,7 +66,11 @@ const Contact = () => {
   if (isSubmitted) {
     return (
       <div className="min-h-screen pt-16 bg-white dark:bg-gray-900 flex items-center justify-center px-4">
-        <div className="text-center max-w-md w-full">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center max-w-md w-full"
+        >
           <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl">✓</span>
           </div>
@@ -81,8 +86,8 @@ const Contact = () => {
           >
             Send Another Message
           </button>
+          </motion.div>
         </div>
-      </div>
     );
   }
 
@@ -90,18 +95,26 @@ const Contact = () => {
       <div className="min-h-screen pt-16 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Header */}
-          <div className="text-center mb-12">
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+          > 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
               Get In Touch
             </h1>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Have a question or want to work together? Send me a message.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <div>
+            <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            >
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
                 Contact Info
               </h2>
@@ -125,12 +138,16 @@ const Contact = () => {
                     </div>
                   </a>
                 ))}
-              </div>
             </div>
+          </motion.div>
 
 
             {/* Contact Form */}
-            <div>
+            <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            >
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -180,9 +197,11 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 disabled={isSubmitting}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium py-3 px-4 rounded-lg transition duration-300"
               >
                 {isSubmitting ? (
@@ -193,12 +212,12 @@ const Contact = () => {
                 ) : (
                   'Send Message'
                 )}
-              </button>
+              </motion.button>
             </form>
-            </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+       </div>
+     </div>
     );
 };
 
