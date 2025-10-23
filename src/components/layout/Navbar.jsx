@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../../contexts/ThemeContext';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { isDark, toggleTheme } = useTheme();
 
   const navigation = [
     { name: 'Home', href: '/', current: location.pathname === '/' },
@@ -38,10 +41,31 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+
+            {/* Dark Mode Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 transition duration-300"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? '☀️' : '🌙'}
+            </motion.button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
+                        {/* Dark Mode Toggle for Mobile */}
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? '☀️' : '🌙'}
+            </motion.button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 focus:outline-none"
