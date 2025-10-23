@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import profilePhoto from '../assets/images/profile/samitha.jpg';
 
 const Home = () => {
   return (
@@ -74,11 +75,17 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="flex justify-center"
             >
+            <img
+                src={profilePhoto}
+                alt="Dilshan - Full Stack Developer"
+                className="w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-white dark:border-gray-800"
+              />
+              {/*
               <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
                 <span className="text-white text-lg font-semibold text-center px-4">
                   Your Professional Photo
                 </span>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

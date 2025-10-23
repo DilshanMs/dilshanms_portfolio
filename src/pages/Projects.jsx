@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+import ecommerceImage from '../assets/images/projects/e-commerce.jpg';
+import taskManagerImage from '../assets/images/projects/taskma.png';
+import weatherImage from '../assets/images/projects/weather.jpg';
+import apiServiceImage from '../assets/images/projects/api.jpg';
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+
+  // Map images to projects
+  const projectImages = {
+    1: ecommerceImage,
+    2: taskManagerImage,
+    3: weatherImage,
+    4: apiServiceImage
+  };
 
 // Simulate API call to fetch projects
   useEffect(() => {
@@ -22,7 +35,8 @@ const Projects = () => {
             category: 'fullstack',
             githubUrl: 'https://github.com/yourusername/ecommerce-app',
             liveUrl: 'https://yourapp.netlify.app',
-            featured: true
+            featured: true,
+            image: projectImages[1]
           },
           {
             id: 2,
@@ -33,7 +47,8 @@ const Projects = () => {
             category: 'frontend',
             githubUrl: 'https://github.com/yourusername/task-manager',
             liveUrl: 'https://yourtaskapp.netlify.app',
-            featured: true
+            featured: true,
+            image: projectImages[2]
           },
           {
             id: 3,
@@ -44,7 +59,8 @@ const Projects = () => {
             category: 'frontend',
             githubUrl: 'https://github.com/yourusername/weather-dashboard',
             liveUrl: 'https://yourweatherapp.netlify.app',
-            featured: false
+            featured: false,
+            image: projectImages[3]
           },
           {
             id: 4,
@@ -55,10 +71,11 @@ const Projects = () => {
             category: 'backend',
             githubUrl: 'https://github.com/yourusername/api-service',
             liveUrl: null,
-            featured: false
+            featured: false,
+            image: projectImages[4]
           }
         ];
-
+q
         setProjects(projectsData);
         setLoading(false);
       } catch (error) {
@@ -145,10 +162,13 @@ const Projects = () => {
             >
 
               {/* Project Image */}
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">Project Preview</span>
-                </div>
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-500"></div>
                 {project.featured && (
                   <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Featured
