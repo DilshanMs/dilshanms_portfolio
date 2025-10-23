@@ -75,7 +75,7 @@ const Projects = () => {
             image: projectImages[4]
           }
         ];
-q
+        
         setProjects(projectsData);
         setLoading(false);
       } catch (error) {
