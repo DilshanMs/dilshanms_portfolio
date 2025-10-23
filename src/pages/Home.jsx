@@ -59,7 +59,7 @@ const Home = () => {
                   View My Work
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/notfound"
                   className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold py-3 px-8 rounded-lg transition duration-300 text-center"
                 >
                   Get In Touch
