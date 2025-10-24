@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import './App.css';
 
+
 function App() {
   return (
     <ThemeProvider>
