@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/ict2233-ca-02-DilshanMs/', // Your repository name
+  base: '/ict2233-ca-02-DilshanMs/', // Match your repository name exactly
   build: {
     outDir: 'dist',
     sourcemap: false,
