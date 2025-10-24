@@ -75,7 +75,7 @@ const Projects = () => {
             image: projectImages[4]
           }
         ];
-q
+        
         setProjects(projectsData);
         setLoading(false);
       } catch (error) {
@@ -158,7 +158,7 @@ q
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-200 dark:border-gray-700"
+              className="bg-white dark:bg-gray-700/35 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-200 dark:border-gray-600"
             >
 
               {/* Project Image */}
@@ -203,7 +203,7 @@ q
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-gray-800 hover:bg-gray-900 text-white text-center py-2 px-4 rounded-lg transition duration-300 font-medium"
+                    className="flex-1 bg-gray-800 dark:bg-gray-600 hover:bg-gray-900 text-white text-center py-2 px-4 rounded-lg transition duration-300 font-medium"
                   >
                     GitHub
                   </a>
@@ -212,7 +212,7 @@ q
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition duration-300 font-medium"
+                      className="flex-1 bg-green-600 dark:bg-green-700 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition duration-300 font-medium"
                     >
                       Live Demo
                     </a>

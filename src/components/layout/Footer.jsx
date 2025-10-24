@@ -4,13 +4,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+    <footer className="bg-gray-300 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright */}
           <div className="text-center md:text-left mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-400">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} Samitha Dilshan. All rights reserved.
             </p>
           </div>
 

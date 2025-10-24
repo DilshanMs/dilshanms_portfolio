@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-20">
+      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-700 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
@@ -78,7 +78,7 @@ const Home = () => {
             <img
                 src={profilePhoto}
                 alt="Dilshan - Full Stack Developer"
-                className="w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-white dark:border-gray-800"
+                className="w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-white dark:border-white-900"
               />
               {/*
               <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
@@ -92,7 +92,7 @@ const Home = () => {
       </section>
 
       {/* Skills Preview */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-gray-100 dark:bg-gray-800 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -110,9 +110,9 @@ const Home = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 1, duration: 0.5 }}
-                className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition duration-300"
+                className="text-center p-6 bg-gray-200 dark:bg-gray-700 rounded-lg hover:shadow-lg transition duration-300"
               >
-                <div className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                <div className="text-2x1 font-bold text-blue-600 dark:text-blue-400 mb-2">
                   {tech}
                 </div>
               </motion.div>

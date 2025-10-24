@@ -6,9 +6,9 @@ const About = () => {
     { name: 'JavaScript', level: 90 },
     { name: 'React', level: 85 },
     { name: 'HTML/CSS', level: 95 },
-    { name: 'Tailwind CSS', level: 88 },
+    { name: 'Tailwind CSS', level: 80 },
     { name: 'Node.js', level: 75 },
-    { name: 'Git', level: 80 }
+    { name: 'Git', level: 70 }
   ];
 
   const softSkills = [
@@ -174,7 +174,7 @@ const About = () => {
                 ))}
               </div>
             </motion.section>
-          </div>
+        </div>
         </div>
       </div>
     </div>
