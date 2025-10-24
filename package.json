@@ -1,9 +1,9 @@
 {
-  "name": "dilshanms-portfolio",
+  "name": "dilshanms_portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://dilshanms.github.io/dilshanms-portfolio",
+  "homepage": "https://dilshanms.github.io/dilshanms_portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
