@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://DilshanMs.github.io/ict2233-ca-02-DilshanMs",
+  "homepage": "https://ICT-Courses.github.io/ict2233-ca-02-DilshanMs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
